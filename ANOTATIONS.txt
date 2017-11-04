@@ -1,0 +1,58 @@
+- Aplicação criada visando a API mínima 19 (4.4 KitKat) e direcionado à 26 (8.0 Oreo).
+- Todas as telas herdam de BaseActivity, onde concentro todas as características que todas possuirão em comum, como o código de transição, que é escolhido e configurado na criação
+- Endless scrolling foi elaborado baseado no código oferecido no link https://github.com/codepath/android_guides/wiki/Endless-Scrolling-with-AdapterViews-and-RecyclerView . Eu particularmente o utilizo sempre.
+- Para Imagens circulares, importei o código do link https://github.com/hdodenhof/CircleImageView , que sempre uso, pois vejo muito ela sendo utilizada em vários outros códigos que vejo em minhas pesquisas. Outro que também utilizo, dependendo da necessidade, é o https://github.com/pungrue26/SelectableRoundedImageView , que permite o controle do raio de cada canto separadamente.
+- Como bibliotecas de comunicação e Json, usei Volley e GSON, respectivamente.
+- As métricas, espaçamentos e tamanhos seguem as orientações de Material Design: https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-keylines-spacing
+- Para análise das estruturas dos JSONs, utilizei o link http://jsonviewer.stack.hu/, que exibe muito bem e facilita a visualização.
+- No layout do desafio, existe o campo nome e sobrenome do usuário, que não é informado no retorno da query, então substituí por user type.
+
+- Para implementar a comunicação utilizando Volley, criei o package .controller.communication , onde o subpackage core contém a implementação geral da biblioteca, e, para cada tipo de objeto a ser adquirido por uma query será implementado um ResultListener dentro de .controller.communication.listeners.
+- Dentro de .controller.communication.providers, serão implementadas as reais chamadas à API do Github, para cara entidade, e, dentro, cada método referente à entidade. Como possuímos apenas duas entidades nesse exercício, foi criado um provider para Repository e outro para PullRequest.
+- As classes de Model que são resultado raiz das chamadas à API possuem a implementação de fromJSON e toJSON, para envio ou recebimento, de acordo com o que for integrado. Nelas utilizei a biblioteca GSON.
+
+- Como cache de imagens, utilizei o LruCache que já vem com o Volley, escolhendo um limite de 10 imagens de tamanho, para uma aplicação simples.
+
+- Adicionei uma classe de utilidade chamada Logger, onde adiciono no log o endereço (classe, método, etc) do trecho a ser logado, dando mais detalhes durante a depuração.
+- Um outro utilitário criado é o UiUtil, onde concentro a comunicação com o usuário. Se um momento em que for desejável trocar de Toast para um snackbar, seria necessário trocar apenas, nele, ou com poucas modificações externas (como tipo ou cor de snackbar).
+- Para comunicação com o usuário, escolhi a biblioteca https://github.com/AndreiD/TSnackBar para usar snack bar estilizado com a mensagem desejada.
+
+- Para conservar os dados e chamadas de serviço durante mudança de configuração (rotação do aparelho, etc), utilizei a solução baseada em fragment. A solução foi bem pesquisada para ver se é uma boa ou péssima prática (caso fosse, outras soluções conhecidas como uso de Loader Pattern ou a biblioteca de Bus pattern Otto foram cogitadas). E, de acordo com sites como http://www.androiddesignpatterns.com/2013/04/retaining-objects-across-config-changes.html e o site https://developer.android.com/guide/topics/resources/runtime-changes.html#RetainingAnObject , é uma possível solução, recomendada, dependendo do tamanho do projeto.
+
+- A biblioteca Volley já possui um componente de imagens por url chamado NetworkImageView, que utiliza o LruCache para guardar imagens recentes, como informado em um item acima. Entretanto, não possui a habilidade de exibir a imagem em formato circular. Portanto, utilizei um código do link https://gist.github.com/zmeid/b36f94237dadd7242b3343db92e86376 para resolver o formato, ao invés da biblioteca do hdodenhof de imagens estáticas informada acima. então a classe CircularNetworkImageView foi adicionada ao projeto.
+
+- A respeito de testes, para os unitários não vi nesse projeto simples nenhum método que demanda um teste do tipo a ser executado, mas criei para a demonstração os testes de conversão de/para JSON e objeto, pois a maioria dos testes para esse projeto seriam mais funcionais.
+
+- Para os testes funcionais automatizados, nota-se que a progress bar não é detectada por ser dinâmica. Então decidi colocá-la dentro de uma ViewGroup para poder detectá-la nos testes.
+
+- Criei apenas um teste unitário usando JUnit e um funcional usando Espresso, ambos simples.
+
+- Para testar a quantidade de itens no RecyclerView (RecyclerViewItemCountAssertion), utilizei o código do link https://stackoverflow.com/a/37339656/6706788
+
+
+
+- testes automatizados (unit, functional)
+- ajustes finos (tamanho fonte, imagens, cores, etc)
+- tela about
+
+
+
+
+testar carregar e voltar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Aplicação criada visando a API mínima 21 (5.0 Lollipop) e direcionado à 26 (8.0 Oreo).
+- Planejando utilizar o Material Design, já que este não é nativo nas versões anteriores à API 21 (5.0), bibliotecas de compatibilidade foram adicionadas.

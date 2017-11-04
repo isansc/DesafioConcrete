@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Desafio Concrete - Isan</string>
+    <string name="app_logo_description">Logo Desafio Concrete - Isan</string>
+
+    <!-- Menu - Actions -->
+    <string name="menu_action_refresh">Atualizar</string>
+    <string name="menu_action_about">Sobre</string>
+
+    <!-- Messages -->
+    <string name="message_warning_empty">Nenhum item encontrado.</string>
+    <string name="message_error_invalid_parameters">Parâmetro inválido. Por favor, reinicie a aplicação e tente novamente.</string>
+    <string name="message_error_communication_network">Falha de rede.\nVerifique sua conexão de dados.</string>
+    <string name="message_error_communication_server">Falha ao comunicar com o servidor, tente novamente mais tarde.</string>
+    <string name="message_error_communication_unauthorized">Falha de autenticação.</string>
+    <string name="message_error_communication_unknown">Desculpe, ocorreu um erro desconhecido ao comunicar com o servidor.</string>
+
+    <!-- Loader -->
+    <string name="loader_loading">Carregando</string>
+    <string name="loader_wait_message">Aguarde o carregamento&#8230;</string>
+
+
+    <!-- About -->
+    <string name="about_title">Criado por:</string>
+    <string name="about_name">Isan de Sousa Castro Campos</string>
+    <!--<string name="about_email">isansc@hotmail.com</string>-->
+    <string name="about_email"><![CDATA[<a href="mailto:isansc@hotmail.com">isansc@hotmail.com</a>]]></string>
+    <string name="about_phone">(19)98232-5322</string>
+    <string name="about_phone_copied">Número de telefone copiado.</string>
+
+</resources>

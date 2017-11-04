@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">64dp</dimen>
+    <dimen name="user_info_guideline_width">120dp</dimen>
+
+    <!-- Margins-->
+    <dimen name="margin_activity">12dp</dimen>
+    <dimen name="margin_default">8dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_big_1">16sp</dimen>
+    <dimen name="text_size_default">12sp</dimen>
+    <dimen name="text_size_small_1">8sp</dimen>
+
+    <!-- Image Sizes -->
+    <dimen name="img_size_circ_photo">40dp</dimen>
+    <dimen name="img_size_circ_photo_small">32dp</dimen>
+    <dimen name="img_size_circ_progress">32dp</dimen>
+    <dimen name="img_size_ico_counter_width">12dp</dimen>
+    <dimen name="img_size_ico_counter_height">24dp</dimen>
+</resources>
